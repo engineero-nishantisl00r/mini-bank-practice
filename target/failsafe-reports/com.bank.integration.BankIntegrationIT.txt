@@ -1,0 +1,58 @@
+-------------------------------------------------------------------------------
+Test set: com.bank.integration.BankIntegrationIT
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.084 s <<< FAILURE! -- in com.bank.integration.BankIntegrationIT
+com.bank.integration.BankIntegrationIT.postTransaction_debit_insufficientFunds_integration -- Time elapsed: 0.011 s <<< ERROR!
+com.bank.exception.AmountRuleViolationException: Transaction amount 50 is below minimum 100 for Salary product SAL1
+	at com.bank.product.SalaryProductRule.validateTransactionAmount(SalaryProductRule.java:41)
+	at com.bank.product.SalaryProductRule_ClientProxy.validateTransactionAmount(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl.postTransaction(TransactionServiceImpl.java:76)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass.postTransaction$$superforward(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass$0.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass.postTransaction(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl_ClientProxy.postTransaction(Unknown Source)
+	at com.bank.integration.BankIntegrationIT.postTransaction_debit_insufficientFunds_integration(BankIntegrationIT.java:170)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.quarkus.test.junit.QuarkusTestExtension.runExtensionMethod(QuarkusTestExtension.java:995)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestMethod(QuarkusTestExtension.java:843)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.bank.integration.BankIntegrationIT.postingNumber_sequence_integration -- Time elapsed: 0.007 s <<< ERROR!
+com.bank.exception.AmountRuleViolationException: Transaction amount 10 is below minimum 100 for Salary product SAL1
+	at com.bank.product.SalaryProductRule.validateTransactionAmount(SalaryProductRule.java:41)
+	at com.bank.product.SalaryProductRule_ClientProxy.validateTransactionAmount(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl.postTransaction(TransactionServiceImpl.java:76)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass.postTransaction$$superforward(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass$0.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:73)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:62)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:136)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:107)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:61)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
+	at com.bank.service.impl.TransactionServiceImpl_Subclass.postTransaction(Unknown Source)
+	at com.bank.service.impl.TransactionServiceImpl_ClientProxy.postTransaction(Unknown Source)
+	at com.bank.integration.BankIntegrationIT.postingNumber_sequence_integration(BankIntegrationIT.java:206)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.quarkus.test.junit.QuarkusTestExtension.runExtensionMethod(QuarkusTestExtension.java:995)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestMethod(QuarkusTestExtension.java:843)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
