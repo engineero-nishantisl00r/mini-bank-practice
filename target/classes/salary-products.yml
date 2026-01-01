@@ -1,0 +1,8 @@
+salary-products:
+  - code: SAL1
+    minAge: 21
+    minTransactionAmount: 100
+
+  - code: SAL2
+    minAge: 25
+    minTransactionAmount: 200

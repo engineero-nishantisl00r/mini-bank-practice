@@ -1,0 +1,8 @@
+student-products:
+  - code: STU1
+    maxAge: 24
+    maxTransactionAmount: 500
+
+  - code: STU2
+    maxAge: 27
+    maxTransactionAmount: 1000

@@ -1,0 +1,18 @@
+salary-products:
+  rules:
+    - code: "SAL1"
+      min-age: 21
+      min-transaction-amount: 100
+    - code: "SAL2"
+      min-age: 25
+      min-transaction-amount: 200
+
+student-products:
+  rules:
+    - code: "STU1"
+      max-age: 24
+      max-transaction-amount: 500
+    - code: "STU2"
+      max-age: 27
+      max-transaction-amount: 1000
+
